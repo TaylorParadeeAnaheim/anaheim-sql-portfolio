@@ -1,0 +1,40 @@
+SELECT 
+    a.CUSTOMER_NO,
+    a.ACCOUNT_NO,
+    addr.SERVICE_ADDRESS,
+    ROUND(AVG(c.consumption_kwh), 2) AS avg_12mo_consumption_kwh,
+    bh.PAST_DUE_BALANCE,
+    CASE WHEN ap.LIHEAP_AMOUNT > 0 THEN 'Yes' ELSE 'No' END AS LIHEAP_applied,
+    CASE WHEN ap.CAPP_AMOUNT > 0 THEN 'Yes' ELSE 'No' END AS CAPP_applied,
+    CASE WHEN ap.EAP_AMOUNT > 0 THEN 'Yes' ELSE 'No' END AS EAP_applied,
+    CASE WHEN ap.IQ_DISCOUNT = 1 THEN 'Yes' ELSE 'No' END AS IQ_discount,
+    ap.THIRD_PARTY_AMOUNT
+FROM 
+    CICUSTOMERACCOUNT a
+JOIN 
+    CIADDRESS addr ON a.ADDRESS_ID = addr.ADDRESS_ID
+LEFT JOIN 
+    CIBILLHISTORY bh ON bh.ACCOUNT_NO = a.ACCOUNT_NO
+LEFT JOIN 
+    CIASSISTANCEPROGRAMS ap ON ap.ACCOUNT_NO = a.ACCOUNT_NO
+LEFT JOIN 
+    CICONSUMPTION c ON c.ACCOUNT_NO = a.ACCOUNT_NO
+WHERE 
+    addr.SERVICE_ADDRESS IN (
+        '504 N. Pauline St',
+        '510 N. Pauline St',
+        '619 N. Pauline St'
+    )
+    AND c.READING_DATE >= ADD_MONTHS(SYSDATE, -12)
+GROUP BY 
+    a.CUSTOMER_NO,
+    a.ACCOUNT_NO,
+    addr.SERVICE_ADDRESS,
+    bh.PAST_DUE_BALANCE,
+    ap.LIHEAP_AMOUNT,
+    ap.CAPP_AMOUNT,
+    ap.EAP_AMOUNT,
+    ap.IQ_DISCOUNT,
+    ap.THIRD_PARTY_AMOUNT
+ORDER BY 
+    addr.SERVICE_ADDRESS;
