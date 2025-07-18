@@ -1,0 +1,5 @@
+CUSTOMER_NO | ACCOUNT_NO | SERVICE_ADDRESS     | AVG_CONSUMPTION_KWH | PAST_DUE | LIHEAP | CAPP | EAP | IQ_DISCOUNT | 3RD_PARTY_ASSIST
+------------|------------|---------------------|----------------------|----------|--------|------|-----|-------------|------------------
+100045      | 2003456    | 504 N. Pauline St   | 837.50               | $123.00  | Yes    | No   | No  | Yes         | $75.00
+100046      | 2003457    | 510 N. Pauline St   | 672.33               | $0.00    | No     | No   | No  | No          | $0.00
+100047      | 2003458    | 619 N. Pauline St   | 701.80               | $89.90   | No     | Yes  | No  | Yes         | $50.00
