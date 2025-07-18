@@ -1,0 +1,7 @@
+SQL_ID       | Executions/hr | Avg Time (ms) | Schema      | Module
+-------------|---------------|----------------|-------------|-----------------------
+9vyc07ycrbwu | 1,636,515     | 0.88           | ENQUESTA    | Batch Processing
+
+SQL_ID: 9vyc07ycrbwu
+SQL Text:
+SELECT * FROM CIS.FCICUSTOMERMETER WHERE METER_STATUS = 'ACTIVE'
