@@ -1,0 +1,10 @@
+total_count | customer_class
+------------|-----------------------
+12345       | Residential
+6789        | Industrial
+2345        | Small  Medium Commercial
+890         | Municipal
+50          | Pump
+20          | Bars Fiber
+15          | SCADA MONITORING FEE
+10          | Other
