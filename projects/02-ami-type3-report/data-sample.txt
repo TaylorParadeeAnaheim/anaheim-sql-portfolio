@@ -1,0 +1,6 @@
+CUSTOMERNUMBER | PREMISENUMBER | SERVICEADDRESS       | PREMISEADDRESS2 | DEVICENUMBER
+-------------------------------------------------------------------------------------
+10002345       | 5501          | 123 Main St          | Apt 1           | 78563214
+10006789       | 5510          | 456 Oak Ave          | Suite 200       | 78563215
+10001234       | 5525          | 789 Pine Rd          |                 | 78563216
+10004567       | 5532          | 321 Elm St           | Apt 3B          | 78563217
